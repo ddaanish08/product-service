@@ -1,0 +1,61 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.4.1'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.product.auth'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// Spring Boot Dependencies
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	// H2 Database for Development
+	runtimeOnly 'com.h2database:h2'
+
+	// JWT Support for Authentication
+	implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
+	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+
+	// SpringDoc OpenAPI for API Documentation
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.7.0'
+
+	// OAuth2 and JOSE for Security Enhancements
+	implementation 'org.springframework.security:spring-security-oauth2-resource-server'
+	implementation 'org.springframework.security:spring-security-oauth2-jose'
+
+	// Development Only Dependencies
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+	// Testing Dependencies
+	testImplementation 'org.springframework.boot:spring-boot-starter-test' // Includes JUnit 5 by default
+	testImplementation 'org.springframework.security:spring-security-test'
+	testImplementation 'org.junit.jupiter:junit-jupiter-api' // JUnit 5 API
+	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine' // JUnit 5 Engine
+	testImplementation 'org.junit.platform:junit-platform-runner' // JUnit Platform Runner (optional)
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher' // JUnit Platform Launcher
+}
+
+tasks.named('test') {
+	useJUnitPlatform() // Ensure JUnit 5 is used
+}
