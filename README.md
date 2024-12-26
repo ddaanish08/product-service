@@ -10,8 +10,7 @@ This project provides RESTful APIs for product management and user authenticatio
 ## Prerequisites
 To run this application, ensure the following are installed:
 
-- **Java 117**
-- **Spring Boot**
+- **Java 17**
 - **Gradle 8.5**
 
 ## Setup and Installation
@@ -51,6 +50,7 @@ To run this application, ensure the following are installed:
 | POST    | `/signup`         | Register a new user                    |
 | POST    | `/login`          | Authenticate a user and generate token |
 | GET     |                   | Get all registered users               |
+
 
 ### Security Details
 
