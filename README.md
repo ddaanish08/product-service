@@ -36,8 +36,8 @@ To run this application, ensure the following are installed:
 
 | Method  | Endpoint          | Description                             | Roles Required      |
 |---------|-------------------|-----------------------------------------|---------------------|
-| POST    | `/`               | Create a new product                   | USER, ADMIN         |
-| GET     | `/`               | Get all products                       | USER, ADMIN         |
+| POST    |                   | Create a new product                   | USER, ADMIN         |
+| GET     |                   | Get all products                       | USER, ADMIN         |
 | DELETE  | `/admin/{id}`     | Delete a product by ID                 | ADMIN               |
 | PUT     | `/admin/{id}`     | Update a product by ID                 | ADMIN               |
 
@@ -50,7 +50,7 @@ To run this application, ensure the following are installed:
 |---------|-------------------|-----------------------------------------|
 | POST    | `/signup`         | Register a new user                    |
 | POST    | `/login`          | Authenticate a user and generate token |
-| GET     | `/`               | Get all registered users               |
+| GET     |                   | Get all registered users               |
 
 ### Security Details
 
